@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Cipher
 {
-    public class cluesWords
+    public class decodedWords
     {
         public string wordIn;
         public List<symbolPair> knownPairs = new List<symbolPair>();
-        public cluesWords(string word)
+        public decodedWords(string word)
         {
             wordIn = word;
         }
         public override string ToString()
         {
-            return clueDecodedWord();
+            return DecodedWord();
         }
-        public string clueDecodedWord()
+        public string DecodedWord()
         {
             string return_word = wordIn;
             foreach(symbolPair s in knownPairs)

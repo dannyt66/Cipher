@@ -8,19 +8,19 @@ namespace Cipher
 {
     public class codedWords
     {
-        public string clueWordIn;
+        public string WordIn;
         public List<symbolPair> clueKnownPairs = new List<symbolPair>();
         public codedWords(string word)
         {
-            clueWordIn = word;
+            WordIn = word;
         }
         public override string ToString()
         {
-            return clueDecodedWord();
+            return DecodedWord();
         }
-        public string clueDecodedWord()
+        public string DecodedWord()
         {
-            string return_word = clueWordIn;
+            string return_word = WordIn;
             foreach(symbolPair s in clueKnownPairs)
             {
                 return_word = return_word.Replace(s.Code, s.Letter);

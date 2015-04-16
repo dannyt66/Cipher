@@ -16,8 +16,10 @@ namespace Cipher
         public List<symbolPair> pairs = new List<symbolPair>();
         public List<codedWords> wordOut = new List<codedWords>();
         public List<cluesWords> clueWordOut = new List<cluesWords>();
+        public List<decodedWords> decodedWordOut = new List<decodedWords>();
         bool codedLoaded = false;
         bool cluesLoaded = false;
+        bool decodedLoaded = false;
         public mainWindow()
         {
             InitializeComponent(); 
@@ -25,7 +27,10 @@ namespace Cipher
 
         private void button2_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i <= codedListBox.Items.Count; i++)
+            {
 
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -69,6 +74,33 @@ namespace Cipher
         private void button5_Click(object sender, EventArgs e)
         {
             decodedWordDialog.ShowDialog();
+            string decodedFileName = decodedWordDialog.FileName;
+            if (decodedLoaded == false)
+            {
+                using (StreamReader dr = new StreamReader(decodedFileName))
+                {
+                    string line;
+                    while ((line = dr.ReadLine()) != null)
+                    {
+                        decodedWordOut.Add(new decodedWords(line));
+                    }
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (letterGuess.Text != null && symbolGuess.Text != null)
+            {
+                pairs.Add(new symbolPair(letter: letterGuess.Text, code: symbolGuess.Text));
+                pairingsListBox.Items.Clear();
+                pairingsListBox.Items.AddRange(wordOut.ToArray());
+                pairingsListBox.Items.AddRange(pairs.ToArray());
+            }
+            else
+            {
+                MessageBox.Show("Please enter a letter and a symbol!");
+            }
         }
     }
 }

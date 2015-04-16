@@ -30,12 +30,12 @@
         {
             this.codedListBox = new System.Windows.Forms.ListBox();
             this.pairingsListBox = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.symbolGuess = new System.Windows.Forms.TextBox();
+            this.letterGuess = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.validateButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,19 +64,19 @@
             this.pairingsListBox.Size = new System.Drawing.Size(120, 264);
             this.pairingsListBox.TabIndex = 1;
             // 
-            // textBox1
+            // symbolGuess
             // 
-            this.textBox1.Location = new System.Drawing.Point(203, 133);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.symbolGuess.Location = new System.Drawing.Point(203, 133);
+            this.symbolGuess.Name = "symbolGuess";
+            this.symbolGuess.Size = new System.Drawing.Size(100, 20);
+            this.symbolGuess.TabIndex = 2;
             // 
-            // textBox2
+            // letterGuess
             // 
-            this.textBox2.Location = new System.Drawing.Point(331, 133);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.letterGuess.Location = new System.Drawing.Point(331, 133);
+            this.letterGuess.Name = "letterGuess";
+            this.letterGuess.Size = new System.Drawing.Size(100, 20);
+            this.letterGuess.TabIndex = 3;
             // 
             // label1
             // 
@@ -104,16 +104,17 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Make Guess";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // validateButton
             // 
-            this.button2.Location = new System.Drawing.Point(268, 189);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Check Guesses";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.validateButton.Location = new System.Drawing.Point(268, 189);
+            this.validateButton.Name = "validateButton";
+            this.validateButton.Size = new System.Drawing.Size(97, 23);
+            this.validateButton.TabIndex = 7;
+            this.validateButton.Text = "Check Guesses";
+            this.validateButton.UseVisualStyleBackColor = true;
+            this.validateButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
@@ -205,12 +206,12 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.validateButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.letterGuess);
+            this.Controls.Add(this.symbolGuess);
             this.Controls.Add(this.pairingsListBox);
             this.Controls.Add(this.codedListBox);
             this.Name = "mainWindow";
@@ -224,12 +225,12 @@
 
         private System.Windows.Forms.ListBox codedListBox;
         private System.Windows.Forms.ListBox pairingsListBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox symbolGuess;
+        private System.Windows.Forms.TextBox letterGuess;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button validateButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
