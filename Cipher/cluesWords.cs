@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Cipher
 {
-    public class words
+    public class cluesWords
     {
         public string wordIn;
         public List<symbolPair> knownPairs = new List<symbolPair>();
-        public words(string word)
+        public cluesWords(string word)
         {
             wordIn = word;
         }

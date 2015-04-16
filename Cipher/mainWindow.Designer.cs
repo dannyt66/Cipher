@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.codedListBox = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.pairingsListBox = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,13 +56,13 @@
             this.codedListBox.Size = new System.Drawing.Size(120, 277);
             this.codedListBox.TabIndex = 0;
             // 
-            // listBox2
+            // pairingsListBox
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(591, 27);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 264);
-            this.listBox2.TabIndex = 1;
+            this.pairingsListBox.FormattingEnabled = true;
+            this.pairingsListBox.Location = new System.Drawing.Point(591, 27);
+            this.pairingsListBox.Name = "pairingsListBox";
+            this.pairingsListBox.Size = new System.Drawing.Size(120, 264);
+            this.pairingsListBox.TabIndex = 1;
             // 
             // textBox1
             // 
@@ -211,7 +211,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.pairingsListBox);
             this.Controls.Add(this.codedListBox);
             this.Name = "mainWindow";
             this.Text = "Cipher";
@@ -223,7 +223,7 @@
         #endregion
 
         private System.Windows.Forms.ListBox codedListBox;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox pairingsListBox;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
