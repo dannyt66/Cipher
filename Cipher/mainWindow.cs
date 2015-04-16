@@ -118,16 +118,17 @@ namespace Cipher
                     isPairUsable = false;
                     break;
                 }
-                /*if (pairingsListBox.Items[p].ToString().Contains(symbolGuess.Text))
+                string symbolCheck = pairingsListBox.Items[p].ToString().Remove(2, 6);
+                if (symbolCheck.Contains(symbolGuess.Text))
                 {
                     MessageBox.Show("You've already used this symbol! Please select another symbol.");
                     isPairUsable = false;
                     break;
-                }*/
+                }
             }
             if (isPairUsable == true)
             {
-                if (letterGuess.Text != null && symbolGuess.Text != null)
+                if (letterGuess.Text.Trim().Length != 0 && symbolGuess.Text.Trim().Length != 0)
                 {
                     pairs.Add(new symbolPair(letter: letterGuess.Text.ToUpper(), code: symbolGuess.Text));
                     pairingsListBox.Items.Clear();
@@ -138,6 +139,8 @@ namespace Cipher
                     }
                     codedListBox.Items.Clear();
                     codedListBox.Items.AddRange(wordOut.ToArray());
+                    letterGuess.Text = "";
+                    symbolGuess.Text = "";
                 }
                 else
                 {
