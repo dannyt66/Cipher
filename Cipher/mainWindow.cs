@@ -110,13 +110,15 @@ namespace Cipher
 
         private void deletePairButton_Click(object sender, EventArgs e)
         {
-            pairs.Remove( symbolPair(pairingsListBox.SelectedItem));
+            pairs.RemoveAt(pairingsListBox.SelectedIndex);
+            pairingsListBox.Items.RemoveAt(pairingsListBox.SelectedIndex);
             foreach (codedWords w in wordOut)
             {
                 w.codedKnownPairs = pairs;
             }
             codedListBox.Items.Clear();
             codedListBox.Items.AddRange(wordOut.ToArray());
+
         }
     }
 }
