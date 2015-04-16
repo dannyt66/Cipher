@@ -21,7 +21,7 @@ namespace Cipher
         bool codedLoaded = false;
         bool cluesLoaded = false;
         bool decodedLoaded = false;
-        int[] frequencyCounter = new int[127];
+        int[] frequencyCounter = new int[128];
         public mainWindow()
         {
             InitializeComponent(); 
@@ -73,7 +73,14 @@ namespace Cipher
                     for (int c = 0; c < wordOut[i].ToString().Length; c++)
                     {
                         int asciiFind = (int)wordOut[i].ToString()[c];
-                        frequencyCounter[asciiFind] + 1;
+                        frequencyCounter[asciiFind]++;
+                    }
+                }
+                for (int i = 0; i <= 127; i++)
+                {
+                    if (frequencyCounter[i] >= 1)
+                    {
+                        frequencyList.Items.Add(((char)i) + " = " + frequencyCounter[i]);
                     }
                 }
             }

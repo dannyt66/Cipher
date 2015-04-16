@@ -48,6 +48,7 @@
             this.deletePairButton = new System.Windows.Forms.Button();
             this.cluesListBox = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.frequencyList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // codedListBox
@@ -216,12 +217,21 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Clues: (please make guesses for each clue)";
             // 
+            // frequencyList
+            // 
+            this.frequencyList.FormattingEnabled = true;
+            this.frequencyList.Location = new System.Drawing.Point(437, 219);
+            this.frequencyList.Name = "frequencyList";
+            this.frequencyList.Size = new System.Drawing.Size(120, 82);
+            this.frequencyList.TabIndex = 17;
+            // 
             // mainWindow
             // 
             this.AcceptButton = this.addPairButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 329);
+            this.Controls.Add(this.frequencyList);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cluesListBox);
             this.Controls.Add(this.deletePairButton);
@@ -268,6 +278,7 @@
         private System.Windows.Forms.Button deletePairButton;
         private System.Windows.Forms.ListBox cluesListBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox frequencyList;
     }
 }
 
