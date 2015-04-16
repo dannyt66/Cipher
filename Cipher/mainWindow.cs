@@ -27,9 +27,26 @@ namespace Cipher
 
         private void button2_Click(object sender, EventArgs e)
         {
+            bool isCorrect = false;
             for (int i = 0; i <= codedListBox.Items.Count; i++)
             {
-
+                if (codedListBox.Items[i] == decodedWordOut[i])
+                {
+                    isCorrect = true;
+                }
+                else
+                {
+                    isCorrect = false;
+                    break;
+                }
+            }
+            if (isCorrect == true)
+            {
+                MessageBox.Show("You got all of the symbols correct!");
+            }
+            else
+            {
+                MessageBox.Show("Your guesses are not correct, please try again");
             }
         }
 
@@ -92,7 +109,7 @@ namespace Cipher
         {
             if (letterGuess.Text != null && symbolGuess.Text != null)
             {
-                pairs.Add(new symbolPair(letter: letterGuess.Text, code: symbolGuess.Text));
+                pairs.Add(new symbolPair(letter: letterGuess.Text.ToUpper(), code: symbolGuess.Text));
                 pairingsListBox.Items.Clear();
                 pairingsListBox.Items.AddRange(pairs.ToArray());
                 foreach (codedWords w in wordOut)
