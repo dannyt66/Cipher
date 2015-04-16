@@ -9,7 +9,7 @@ namespace Cipher
     public class decodedWords
     {
         public string wordIn;
-        public List<symbolPair> knownPairs = new List<symbolPair>();
+        public List<symbolPair> decodedKnownPairs = new List<symbolPair>();
         public decodedWords(string word)
         {
             wordIn = word;
@@ -21,7 +21,7 @@ namespace Cipher
         public string DecodedWord()
         {
             string return_word = wordIn;
-            foreach(symbolPair s in knownPairs)
+            foreach(symbolPair s in decodedKnownPairs)
             {
                 return_word = return_word.Replace(s.Code, s.Letter);
             }

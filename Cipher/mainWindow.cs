@@ -44,10 +44,10 @@ namespace Cipher
                     string line;
                     while ((line = cwr.ReadLine()) != null)
                     {
-                        clueWordOut.Add(new cluesWords(line));
+                        wordOut.Add(new codedWords(line));
                     }
                 }
-                codedListBox.Items.AddRange(clueWordOut.ToArray());
+                codedListBox.Items.AddRange(wordOut.ToArray());
                 codedLoaded = true;
             }
         }
@@ -63,10 +63,10 @@ namespace Cipher
                     string line;
                     while ((line = cr.ReadLine ()) != null)
                     {
-                        wordOut.Add(new codedWords(line));
+                        clueWordOut.Add(new cluesWords(line));
                     }
                 }
-                cluesListBox.Items.AddRange(wordOut.ToArray());
+                cluesListBox.Items.AddRange(clueWordOut.ToArray());
                 cluesLoaded = true;
             }
         }
@@ -95,15 +95,28 @@ namespace Cipher
                 pairs.Add(new symbolPair(letter: letterGuess.Text, code: symbolGuess.Text));
                 pairingsListBox.Items.Clear();
                 pairingsListBox.Items.AddRange(pairs.ToArray());
-                for (int i = 0; i < codedListBox.Items.Count; i++)
+                foreach (codedWords w in wordOut)
                 {
-                    codedListBox.Items[i] = codedListBox.Items[i].ToString().Replace(symbolGuess.Text, letterGuess.Text);
+                    w.codedKnownPairs = pairs;
                 }
+                codedListBox.Items.Clear();
+                codedListBox.Items.AddRange(wordOut.ToArray());
             }
             else
             {
                 MessageBox.Show("Please enter a letter and a symbol!");
             }
+        }
+
+        private void deletePairButton_Click(object sender, EventArgs e)
+        {
+            pairs.Remove( symbolPair(pairingsListBox.SelectedItem));
+            foreach (codedWords w in wordOut)
+            {
+                w.codedKnownPairs = pairs;
+            }
+            codedListBox.Items.Clear();
+            codedListBox.Items.AddRange(wordOut.ToArray());
         }
     }
 }
