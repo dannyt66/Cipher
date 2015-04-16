@@ -46,6 +46,8 @@
             this.cluesDialog = new System.Windows.Forms.OpenFileDialog();
             this.decodedWordDialog = new System.Windows.Forms.OpenFileDialog();
             this.deletePairButton = new System.Windows.Forms.Button();
+            this.cluesListBox = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // codedListBox
@@ -98,7 +100,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(268, 159);
+            this.button1.Location = new System.Drawing.Point(437, 131);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 23);
             this.button1.TabIndex = 6;
@@ -108,7 +110,7 @@
             // 
             // validateButton
             // 
-            this.validateButton.Location = new System.Drawing.Point(268, 189);
+            this.validateButton.Location = new System.Drawing.Point(437, 160);
             this.validateButton.Name = "validateButton";
             this.validateButton.Size = new System.Drawing.Size(97, 23);
             this.validateButton.TabIndex = 7;
@@ -187,18 +189,37 @@
             // 
             // deletePairButton
             // 
-            this.deletePairButton.Location = new System.Drawing.Point(268, 218);
+            this.deletePairButton.Location = new System.Drawing.Point(437, 189);
             this.deletePairButton.Name = "deletePairButton";
             this.deletePairButton.Size = new System.Drawing.Size(142, 23);
             this.deletePairButton.TabIndex = 14;
             this.deletePairButton.Text = "Delete Selected Pairing";
             this.deletePairButton.UseVisualStyleBackColor = true;
             // 
+            // cluesListBox
+            // 
+            this.cluesListBox.FormattingEnabled = true;
+            this.cluesListBox.Location = new System.Drawing.Point(139, 208);
+            this.cluesListBox.Name = "cluesListBox";
+            this.cluesListBox.Size = new System.Drawing.Size(120, 95);
+            this.cluesListBox.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(139, 189);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(212, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Clues: (please make guesses for each clue)";
+            // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 329);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cluesListBox);
             this.Controls.Add(this.deletePairButton);
             this.Controls.Add(this.loadDecodedButton);
             this.Controls.Add(this.loadCluesButton);
@@ -241,6 +262,8 @@
         private System.Windows.Forms.OpenFileDialog cluesDialog;
         private System.Windows.Forms.OpenFileDialog decodedWordDialog;
         private System.Windows.Forms.Button deletePairButton;
+        private System.Windows.Forms.ListBox cluesListBox;
+        private System.Windows.Forms.Label label6;
     }
 }
 

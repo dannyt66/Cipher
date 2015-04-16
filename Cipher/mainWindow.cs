@@ -66,7 +66,7 @@ namespace Cipher
                         wordOut.Add(new codedWords(line));
                     }
                 }
-                pairingsListBox.Items.AddRange(wordOut.ToArray());
+                cluesListBox.Items.AddRange(wordOut.ToArray());
                 cluesLoaded = true;
             }
         }
@@ -94,8 +94,11 @@ namespace Cipher
             {
                 pairs.Add(new symbolPair(letter: letterGuess.Text, code: symbolGuess.Text));
                 pairingsListBox.Items.Clear();
-                pairingsListBox.Items.AddRange(wordOut.ToArray());
                 pairingsListBox.Items.AddRange(pairs.ToArray());
+                for (int i = 0; i < codedListBox.Items.Count; i++)
+                {
+                    codedListBox.Items[i] = codedListBox.Items[i].ToString().Replace(symbolGuess.Text, letterGuess.Text);
+                }
             }
             else
             {
