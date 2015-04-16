@@ -21,6 +21,7 @@ namespace Cipher
         bool codedLoaded = false;
         bool cluesLoaded = false;
         bool decodedLoaded = false;
+        int[] frequencyCounter = new int[127];
         public mainWindow()
         {
             InitializeComponent(); 
@@ -67,6 +68,14 @@ namespace Cipher
                 }
                 codedListBox.Items.AddRange(wordOut.ToArray());
                 codedLoaded = true;
+                for (int i = 0; i < wordOut.Count; i++)
+                {
+                    for (int c = 0; c < wordOut[i].ToString().Length; c++)
+                    {
+                        int asciiFind = (int)wordOut[i].ToString()[c];
+                        frequencyCounter[asciiFind] + 1;
+                    }
+                }
             }
         }
 
