@@ -39,9 +39,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.loadCoded = new System.Windows.Forms.Button();
+            this.loadCluesButton = new System.Windows.Forms.Button();
+            this.loadDecodedButton = new System.Windows.Forms.Button();
+            this.codedWordDialog = new System.Windows.Forms.OpenFileDialog();
+            this.cluesDialog = new System.Windows.Forms.OpenFileDialog();
+            this.decodedWordDialog = new System.Windows.Forms.OpenFileDialog();
+            this.deletePairButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -49,7 +53,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(13, 26);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 290);
+            this.listBox1.Size = new System.Drawing.Size(120, 277);
             this.listBox1.TabIndex = 0;
             // 
             // listBox2
@@ -57,7 +61,7 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Location = new System.Drawing.Point(591, 27);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 290);
+            this.listBox2.Size = new System.Drawing.Size(120, 264);
             this.listBox2.TabIndex = 1;
             // 
             // textBox1
@@ -138,41 +142,66 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "->";
             // 
-            // button3
+            // loadCoded
             // 
-            this.button3.Location = new System.Drawing.Point(140, 27);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Load Coded Words";
-            this.button3.UseVisualStyleBackColor = true;
+            this.loadCoded.Location = new System.Drawing.Point(140, 27);
+            this.loadCoded.Name = "loadCoded";
+            this.loadCoded.Size = new System.Drawing.Size(125, 23);
+            this.loadCoded.TabIndex = 11;
+            this.loadCoded.Text = "Load Coded Words";
+            this.loadCoded.UseVisualStyleBackColor = true;
+            this.loadCoded.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // loadCluesButton
             // 
-            this.button4.Location = new System.Drawing.Point(271, 27);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Load Clues";
-            this.button4.UseVisualStyleBackColor = true;
+            this.loadCluesButton.Location = new System.Drawing.Point(271, 27);
+            this.loadCluesButton.Name = "loadCluesButton";
+            this.loadCluesButton.Size = new System.Drawing.Size(75, 23);
+            this.loadCluesButton.TabIndex = 12;
+            this.loadCluesButton.Text = "Load Clues";
+            this.loadCluesButton.UseVisualStyleBackColor = true;
+            this.loadCluesButton.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // loadDecodedButton
             // 
-            this.button5.Location = new System.Drawing.Point(352, 27);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(125, 23);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Load Decoded Words";
-            this.button5.UseVisualStyleBackColor = true;
+            this.loadDecodedButton.Location = new System.Drawing.Point(352, 27);
+            this.loadDecodedButton.Name = "loadDecodedButton";
+            this.loadDecodedButton.Size = new System.Drawing.Size(125, 23);
+            this.loadDecodedButton.TabIndex = 13;
+            this.loadDecodedButton.Text = "Load Decoded Words";
+            this.loadDecodedButton.UseVisualStyleBackColor = true;
+            this.loadDecodedButton.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // codedWordDialog
+            // 
+            this.codedWordDialog.Filter = "Text files (*.txt)|*.txt";
+            // 
+            // cluesDialog
+            // 
+            this.cluesDialog.Filter = "Text files (*.txt)|*.txt";
+            // 
+            // decodedWordDialog
+            // 
+            this.decodedWordDialog.Filter = "Text files (*.txt)|*.txt";
+            // 
+            // deletePairButton
+            // 
+            this.deletePairButton.Location = new System.Drawing.Point(268, 218);
+            this.deletePairButton.Name = "deletePairButton";
+            this.deletePairButton.Size = new System.Drawing.Size(142, 23);
+            this.deletePairButton.TabIndex = 14;
+            this.deletePairButton.Text = "Delete Selected Pairing";
+            this.deletePairButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 329);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.deletePairButton);
+            this.Controls.Add(this.loadDecodedButton);
+            this.Controls.Add(this.loadCluesButton);
+            this.Controls.Add(this.loadCoded);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -204,9 +233,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button loadCoded;
+        private System.Windows.Forms.Button loadCluesButton;
+        private System.Windows.Forms.Button loadDecodedButton;
+        private System.Windows.Forms.OpenFileDialog codedWordDialog;
+        private System.Windows.Forms.OpenFileDialog cluesDialog;
+        private System.Windows.Forms.OpenFileDialog decodedWordDialog;
+        private System.Windows.Forms.Button deletePairButton;
     }
 }
 

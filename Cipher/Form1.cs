@@ -21,5 +21,20 @@ namespace Cipher
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            codedWordDialog.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            cluesDialog.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            decodedWordDialog.ShowDialog();
+        }
     }
 }
