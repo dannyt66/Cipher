@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace Cipher
 {
@@ -28,9 +29,9 @@ namespace Cipher
         private void button2_Click(object sender, EventArgs e)
         {
             bool isCorrect = false;
-            for (int i = 0; i <= codedListBox.Items.Count; i++)
+            for (int i = 0; i < codedListBox.Items.Count; i++)
             {
-                if (codedListBox.Items[i] == decodedWordOut[i])
+                if (codedListBox.Items[i].ToString() == decodedWordOut[i].ToString())
                 {
                     isCorrect = true;
                 }
@@ -102,26 +103,46 @@ namespace Cipher
                         decodedWordOut.Add(new decodedWords(line));
                     }
                 }
+                decodedLoaded = true;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (letterGuess.Text != null && symbolGuess.Text != null)
+            bool isPairUsable = true;
+            for (int p = 0; p < pairingsListBox.Items.Count; p++)
             {
-                pairs.Add(new symbolPair(letter: letterGuess.Text.ToUpper(), code: symbolGuess.Text));
-                pairingsListBox.Items.Clear();
-                pairingsListBox.Items.AddRange(pairs.ToArray());
-                foreach (codedWords w in wordOut)
+                if (pairingsListBox.Items[p].ToString().Contains(letterGuess.Text.ToUpper()))
                 {
-                    w.codedKnownPairs = pairs;
+                    MessageBox.Show("You've already used this letter! Please select another letter.");
+                    isPairUsable = false;
+                    break;
                 }
-                codedListBox.Items.Clear();
-                codedListBox.Items.AddRange(wordOut.ToArray());
+                /*if (pairingsListBox.Items[p].ToString().Contains(symbolGuess.Text))
+                {
+                    MessageBox.Show("You've already used this symbol! Please select another symbol.");
+                    isPairUsable = false;
+                    break;
+                }*/
             }
-            else
+            if (isPairUsable == true)
             {
-                MessageBox.Show("Please enter a letter and a symbol!");
+                if (letterGuess.Text != null && symbolGuess.Text != null)
+                {
+                    pairs.Add(new symbolPair(letter: letterGuess.Text.ToUpper(), code: symbolGuess.Text));
+                    pairingsListBox.Items.Clear();
+                    pairingsListBox.Items.AddRange(pairs.ToArray());
+                    foreach (codedWords w in wordOut)
+                    {
+                        w.codedKnownPairs = pairs;
+                    }
+                    codedListBox.Items.Clear();
+                    codedListBox.Items.AddRange(wordOut.ToArray());
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a letter and a symbol!");
+                }
             }
         }
 

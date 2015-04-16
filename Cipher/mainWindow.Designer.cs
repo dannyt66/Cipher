@@ -69,6 +69,7 @@
             // symbolGuess
             // 
             this.symbolGuess.Location = new System.Drawing.Point(203, 133);
+            this.symbolGuess.MaxLength = 1;
             this.symbolGuess.Name = "symbolGuess";
             this.symbolGuess.Size = new System.Drawing.Size(100, 20);
             this.symbolGuess.TabIndex = 2;
@@ -76,6 +77,7 @@
             // letterGuess
             // 
             this.letterGuess.Location = new System.Drawing.Point(331, 133);
+            this.letterGuess.MaxLength = 1;
             this.letterGuess.Name = "letterGuess";
             this.letterGuess.Size = new System.Drawing.Size(100, 20);
             this.letterGuess.TabIndex = 3;
