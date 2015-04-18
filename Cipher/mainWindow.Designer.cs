@@ -49,6 +49,7 @@
             this.cluesListBox = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.frequencyList = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // codedListBox
@@ -56,20 +57,20 @@
             this.codedListBox.FormattingEnabled = true;
             this.codedListBox.Location = new System.Drawing.Point(13, 26);
             this.codedListBox.Name = "codedListBox";
-            this.codedListBox.Size = new System.Drawing.Size(120, 277);
+            this.codedListBox.Size = new System.Drawing.Size(120, 238);
             this.codedListBox.TabIndex = 0;
             // 
             // pairingsListBox
             // 
             this.pairingsListBox.FormattingEnabled = true;
-            this.pairingsListBox.Location = new System.Drawing.Point(591, 27);
+            this.pairingsListBox.Location = new System.Drawing.Point(139, 26);
             this.pairingsListBox.Name = "pairingsListBox";
-            this.pairingsListBox.Size = new System.Drawing.Size(120, 264);
+            this.pairingsListBox.Size = new System.Drawing.Size(120, 238);
             this.pairingsListBox.TabIndex = 1;
             // 
             // symbolGuess
             // 
-            this.symbolGuess.Location = new System.Drawing.Point(203, 133);
+            this.symbolGuess.Location = new System.Drawing.Point(16, 297);
             this.symbolGuess.MaxLength = 1;
             this.symbolGuess.Name = "symbolGuess";
             this.symbolGuess.Size = new System.Drawing.Size(100, 20);
@@ -77,7 +78,7 @@
             // 
             // letterGuess
             // 
-            this.letterGuess.Location = new System.Drawing.Point(331, 133);
+            this.letterGuess.Location = new System.Drawing.Point(139, 297);
             this.letterGuess.MaxLength = 1;
             this.letterGuess.Name = "letterGuess";
             this.letterGuess.Size = new System.Drawing.Size(100, 20);
@@ -86,7 +87,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(200, 102);
+            this.label1.Location = new System.Drawing.Point(13, 281);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 4;
@@ -95,7 +96,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(328, 102);
+            this.label2.Location = new System.Drawing.Point(136, 281);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 5;
@@ -103,7 +104,7 @@
             // 
             // addPairButton
             // 
-            this.addPairButton.Location = new System.Drawing.Point(437, 131);
+            this.addPairButton.Location = new System.Drawing.Point(265, 266);
             this.addPairButton.Name = "addPairButton";
             this.addPairButton.Size = new System.Drawing.Size(97, 23);
             this.addPairButton.TabIndex = 6;
@@ -113,7 +114,7 @@
             // 
             // validateButton
             // 
-            this.validateButton.Location = new System.Drawing.Point(437, 160);
+            this.validateButton.Location = new System.Drawing.Point(265, 295);
             this.validateButton.Name = "validateButton";
             this.validateButton.Size = new System.Drawing.Size(97, 23);
             this.validateButton.TabIndex = 7;
@@ -133,7 +134,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(591, 8);
+            this.label4.Location = new System.Drawing.Point(136, 7);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 9;
@@ -142,7 +143,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(309, 136);
+            this.label5.Location = new System.Drawing.Point(122, 300);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(16, 13);
             this.label5.TabIndex = 10;
@@ -150,7 +151,7 @@
             // 
             // loadCoded
             // 
-            this.loadCoded.Location = new System.Drawing.Point(140, 27);
+            this.loadCoded.Location = new System.Drawing.Point(442, 271);
             this.loadCoded.Name = "loadCoded";
             this.loadCoded.Size = new System.Drawing.Size(125, 23);
             this.loadCoded.TabIndex = 11;
@@ -160,7 +161,7 @@
             // 
             // loadCluesButton
             // 
-            this.loadCluesButton.Location = new System.Drawing.Point(271, 27);
+            this.loadCluesButton.Location = new System.Drawing.Point(442, 241);
             this.loadCluesButton.Name = "loadCluesButton";
             this.loadCluesButton.Size = new System.Drawing.Size(75, 23);
             this.loadCluesButton.TabIndex = 12;
@@ -170,7 +171,7 @@
             // 
             // loadDecodedButton
             // 
-            this.loadDecodedButton.Location = new System.Drawing.Point(352, 27);
+            this.loadDecodedButton.Location = new System.Drawing.Point(442, 300);
             this.loadDecodedButton.Name = "loadDecodedButton";
             this.loadDecodedButton.Size = new System.Drawing.Size(125, 23);
             this.loadDecodedButton.TabIndex = 13;
@@ -192,7 +193,7 @@
             // 
             // deletePairButton
             // 
-            this.deletePairButton.Location = new System.Drawing.Point(437, 189);
+            this.deletePairButton.Location = new System.Drawing.Point(265, 237);
             this.deletePairButton.Name = "deletePairButton";
             this.deletePairButton.Size = new System.Drawing.Size(142, 23);
             this.deletePairButton.TabIndex = 14;
@@ -203,7 +204,7 @@
             // cluesListBox
             // 
             this.cluesListBox.FormattingEnabled = true;
-            this.cluesListBox.Location = new System.Drawing.Point(139, 208);
+            this.cluesListBox.Location = new System.Drawing.Point(442, 24);
             this.cluesListBox.Name = "cluesListBox";
             this.cluesListBox.Size = new System.Drawing.Size(120, 95);
             this.cluesListBox.TabIndex = 15;
@@ -211,7 +212,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(139, 189);
+            this.label6.Location = new System.Drawing.Point(350, 7);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(212, 13);
             this.label6.TabIndex = 16;
@@ -220,17 +221,27 @@
             // frequencyList
             // 
             this.frequencyList.FormattingEnabled = true;
-            this.frequencyList.Location = new System.Drawing.Point(437, 219);
+            this.frequencyList.Location = new System.Drawing.Point(442, 142);
             this.frequencyList.Name = "frequencyList";
             this.frequencyList.Size = new System.Drawing.Size(120, 82);
             this.frequencyList.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(439, 126);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Symbol Frequency:";
             // 
             // mainWindow
             // 
             this.AcceptButton = this.addPairButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 329);
+            this.ClientSize = new System.Drawing.Size(580, 329);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.frequencyList);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cluesListBox);
@@ -279,6 +290,7 @@
         private System.Windows.Forms.ListBox cluesListBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox frequencyList;
+        private System.Windows.Forms.Label label7;
     }
 }
 
