@@ -14,10 +14,12 @@ namespace Cipher
 {
     public partial class mainWindow : Form
     {
+        //Initialise the classes that will be used to load files
         public List<symbolPair> pairs = new List<symbolPair>();
         public List<codedWords> wordOut = new List<codedWords>();
         public List<cluesWords> clueWordOut = new List<cluesWords>();
         public List<decodedWords> decodedWordOut = new List<decodedWords>();
+        //Set the files to not be loaded upon launch
         bool codedLoaded = false;
         bool cluesLoaded = false;
         bool decodedLoaded = false;
