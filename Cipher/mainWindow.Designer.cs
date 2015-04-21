@@ -46,10 +46,10 @@
             this.cluesDialog = new System.Windows.Forms.OpenFileDialog();
             this.decodedWordDialog = new System.Windows.Forms.OpenFileDialog();
             this.deletePairButton = new System.Windows.Forms.Button();
-            this.cluesListBox = new System.Windows.Forms.ListBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.frequencyList = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // codedListBox
@@ -104,9 +104,9 @@
             // 
             // addPairButton
             // 
-            this.addPairButton.Location = new System.Drawing.Point(265, 266);
+            this.addPairButton.Location = new System.Drawing.Point(279, 273);
             this.addPairButton.Name = "addPairButton";
-            this.addPairButton.Size = new System.Drawing.Size(97, 23);
+            this.addPairButton.Size = new System.Drawing.Size(142, 23);
             this.addPairButton.TabIndex = 6;
             this.addPairButton.Text = "Make Guess";
             this.addPairButton.UseVisualStyleBackColor = true;
@@ -114,9 +114,9 @@
             // 
             // validateButton
             // 
-            this.validateButton.Location = new System.Drawing.Point(265, 295);
+            this.validateButton.Location = new System.Drawing.Point(279, 302);
             this.validateButton.Name = "validateButton";
-            this.validateButton.Size = new System.Drawing.Size(97, 23);
+            this.validateButton.Size = new System.Drawing.Size(142, 23);
             this.validateButton.TabIndex = 7;
             this.validateButton.Text = "Check Guesses";
             this.validateButton.UseVisualStyleBackColor = true;
@@ -151,9 +151,9 @@
             // 
             // loadCoded
             // 
-            this.loadCoded.Location = new System.Drawing.Point(442, 271);
+            this.loadCoded.Location = new System.Drawing.Point(442, 244);
             this.loadCoded.Name = "loadCoded";
-            this.loadCoded.Size = new System.Drawing.Size(125, 23);
+            this.loadCoded.Size = new System.Drawing.Size(120, 23);
             this.loadCoded.TabIndex = 11;
             this.loadCoded.Text = "Load Coded Words";
             this.loadCoded.UseVisualStyleBackColor = true;
@@ -161,9 +161,9 @@
             // 
             // loadCluesButton
             // 
-            this.loadCluesButton.Location = new System.Drawing.Point(442, 241);
+            this.loadCluesButton.Location = new System.Drawing.Point(442, 273);
             this.loadCluesButton.Name = "loadCluesButton";
-            this.loadCluesButton.Size = new System.Drawing.Size(75, 23);
+            this.loadCluesButton.Size = new System.Drawing.Size(120, 23);
             this.loadCluesButton.TabIndex = 12;
             this.loadCluesButton.Text = "Load Clues";
             this.loadCluesButton.UseVisualStyleBackColor = true;
@@ -171,9 +171,9 @@
             // 
             // loadDecodedButton
             // 
-            this.loadDecodedButton.Location = new System.Drawing.Point(442, 300);
+            this.loadDecodedButton.Location = new System.Drawing.Point(442, 302);
             this.loadDecodedButton.Name = "loadDecodedButton";
-            this.loadDecodedButton.Size = new System.Drawing.Size(125, 23);
+            this.loadDecodedButton.Size = new System.Drawing.Size(120, 23);
             this.loadDecodedButton.TabIndex = 13;
             this.loadDecodedButton.Text = "Load Decoded Words";
             this.loadDecodedButton.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             // 
             // deletePairButton
             // 
-            this.deletePairButton.Location = new System.Drawing.Point(265, 237);
+            this.deletePairButton.Location = new System.Drawing.Point(279, 244);
             this.deletePairButton.Name = "deletePairButton";
             this.deletePairButton.Size = new System.Drawing.Size(142, 23);
             this.deletePairButton.TabIndex = 14;
@@ -201,39 +201,40 @@
             this.deletePairButton.UseVisualStyleBackColor = true;
             this.deletePairButton.Click += new System.EventHandler(this.deletePairButton_Click);
             // 
-            // cluesListBox
-            // 
-            this.cluesListBox.FormattingEnabled = true;
-            this.cluesListBox.Location = new System.Drawing.Point(442, 24);
-            this.cluesListBox.Name = "cluesListBox";
-            this.cluesListBox.Size = new System.Drawing.Size(120, 95);
-            this.cluesListBox.TabIndex = 15;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(350, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(212, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Clues: (please make guesses for each clue)";
-            // 
             // frequencyList
             // 
             this.frequencyList.FormattingEnabled = true;
-            this.frequencyList.Location = new System.Drawing.Point(442, 142);
+            this.frequencyList.Location = new System.Drawing.Point(442, 26);
             this.frequencyList.Name = "frequencyList";
-            this.frequencyList.Size = new System.Drawing.Size(120, 82);
+            this.frequencyList.Size = new System.Drawing.Size(120, 212);
             this.frequencyList.TabIndex = 17;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(439, 126);
+            this.label7.Location = new System.Drawing.Point(439, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 13);
             this.label7.TabIndex = 18;
             this.label7.Text = "Symbol Frequency:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(315, 212);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(123, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Note: please load coded";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(316, 225);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "words before clues";
             // 
             // mainWindow
             // 
@@ -241,10 +242,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 329);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.frequencyList);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cluesListBox);
             this.Controls.Add(this.deletePairButton);
             this.Controls.Add(this.loadDecodedButton);
             this.Controls.Add(this.loadCluesButton);
@@ -287,10 +288,10 @@
         private System.Windows.Forms.OpenFileDialog cluesDialog;
         private System.Windows.Forms.OpenFileDialog decodedWordDialog;
         private System.Windows.Forms.Button deletePairButton;
-        private System.Windows.Forms.ListBox cluesListBox;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox frequencyList;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
     }
 }
 
