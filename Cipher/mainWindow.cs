@@ -129,8 +129,30 @@ namespace Cipher
                         clueWordOut.Add(new cluesWords(line));
                     }
                 }
-                //Copy the contents of the array to the list box
-                cluesListBox.Items.AddRange(clueWordOut.ToArray());
+                //Loop through all the loaded clues
+                for (int i = 0; i < clueWordOut.Count; i++)
+                {
+                    //The letter is the first letter on the line, so remove the second letter
+                    string clueText = clueWordOut[i].ToString().Remove(1);
+                    //The symbol is the second letter, so remove the first
+                    string clueSymbol = clueWordOut[i].ToString().Remove(0, 1);
+                    //Add a new symbol pairing with the clue
+                    pairs.Add(new symbolPair(letter: clueText, code: clueSymbol));
+                }
+                //Clear the pairs list box
+                pairingsListBox.Items.Clear();
+                //Read all the items with the new pair included
+                pairingsListBox.Items.AddRange(pairs.ToArray());
+                //Loop through all the coded words
+                foreach (codedWords w in wordOut)
+                {
+                    //Replace the symbol with the letter in the coded words
+                    w.codedKnownPairs = pairs;
+                }
+                //Clear the coded words list box
+                codedListBox.Items.Clear();
+                //Add all the items with the new symbol replaced
+                codedListBox.Items.AddRange(wordOut.ToArray());
                 //Set the file loaded to true
                 cluesLoaded = true;
             }
@@ -177,7 +199,7 @@ namespace Cipher
                     break;
                 }
                 //Only check the first character to ensure - can be used
-                string symbolCheck = pairingsListBox.Items[p].ToString().Remove(2, 6);
+                string symbolCheck = pairingsListBox.Items[p].ToString().Remove(1, 5);
                 //Check that the symbol inputted has not already been used
                 if (symbolCheck.Contains(symbolGuess.Text))
                 {
@@ -199,7 +221,7 @@ namespace Cipher
                     pairs.Add(new symbolPair(letter: letterGuess.Text.ToUpper(), code: symbolGuess.Text));
                     //Clear the pairs list box
                     pairingsListBox.Items.Clear();
-                    //Readd all the items with the new pair included
+                    //Read all the items with the new pair included
                     pairingsListBox.Items.AddRange(pairs.ToArray());
                     //Loop through all the coded words
                     foreach (codedWords w in wordOut)
